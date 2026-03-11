@@ -1,4 +1,5 @@
 name: ML CI Pipeline
+
 on: [push]
 
 jobs:
@@ -6,19 +7,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: install python
+      - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: install dependencies
+      - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: build docker image
+      - name: Build Docker image
         run: docker build -t docker_lr .
 
-      - name: run docker container
+      - name: Run Docker container
         run: docker run docker_lr

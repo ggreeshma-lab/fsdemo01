@@ -17,4 +17,4 @@ def test_prediction():
     model = LinearRegression()
     model.fit(x,y)
     pred =model.prediction([[5]])
-    assert round(pred [0,2]==10.0)
+    assert round(pred [0],2) ==10.0
