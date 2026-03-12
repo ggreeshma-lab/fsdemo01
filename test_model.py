@@ -15,6 +15,8 @@ def test_intercept():
 
 def test_prediction():
     model = LinearRegression()
-    model.fit(x,y)
-    pred =model.prediction([[5]])
-    assert round(pred [0],2) ==10.0
+    model.fit(x, y)
+
+    pred = model.predict([[5]])
+
+    assert round(pred[0], 2) == 10.0
